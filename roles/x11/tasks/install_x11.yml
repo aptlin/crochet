@@ -39,6 +39,8 @@
     - xfonts-terminus
     - fonts-hack-ttf
     - sakura
+    - dunst
+    - libnotify-bin
     - gnuplot
     - xinit
     - x11-xserver-utils

@@ -1,0 +1,19 @@
+---
+- name: ensure ~/dev/ exists
+  file: path="~/dev" state="directory"
+
+- name: clone the sdll blog 
+  when: sdll is defined
+  git:
+    repo: 'https://github.com/sdll/sdll.github.io'
+    dest: ~/dev/sdll
+    update: no
+    accept_hostkey: true
+
+- name: clone the umus blog 
+  when: sdll is defined
+  git:
+    repo: 'https://github.com/umus/umus.github.io'
+    dest: ~/dev/umus
+    update: no
+    accept_hostkey: true

@@ -1,7 +1,10 @@
 ---
 
-- include: networking.yml
+- include: audio.yml
 - include: input.yml
-- include: reading.yml
+- include: mail.yml
+- include: networking.yml
 - include: programming.yml
+- include: projects.yml
+- include: reading.yml
 - include: utils.yml

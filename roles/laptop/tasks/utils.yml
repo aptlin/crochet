@@ -7,4 +7,8 @@
   with_items:
     - texlive-full
     - gnome-screenshot
+    - vlc
+    - xbindkeys
+    - gparted
+    - haveged
     
