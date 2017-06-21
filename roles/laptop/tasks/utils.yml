@@ -1,0 +1,10 @@
+- name: install general system utilities
+  become: yes
+  when: ansible_os_family == "Debian"
+  apt:
+    name: "{{item}}"
+    state: latest
+  with_items:
+    - texlive-full
+    - gnome-screenshot
+    

@@ -1,0 +1,15 @@
+---
+
+- name: install networking tools
+  become: yes
+  when: ansible_os_family == "Debian"
+  apt:
+    name: "{{item}}"
+    state: latest
+  with_items:
+    - wpasupplicant
+    - network-manager
+    - network-manager-gnome
+    - network-manager-strongswan
+    
+

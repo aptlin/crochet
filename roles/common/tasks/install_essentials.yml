@@ -1,0 +1,27 @@
+---
+
+- name: install essentials (Debian)
+  become: yes
+  when: ansible_os_family == "Debian"
+  apt: name="{{item}}" state=present
+  with_items:
+  # setup
+    - ansible
+    - git
+    - stow
+  # utils
+    - build-essential
+    - bzip2
+    - make
+    - unzip
+    - zip
+    - tmux
+    - htop
+    - w3m    
+    - emacs25
+    - vim
+  # search and navigation
+    - silversearcher-ag
+    - locate
+    - ranger
+

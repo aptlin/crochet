@@ -1,0 +1,26 @@
+---
+- name: ensure ~/dev/ exists
+  file: path="~/dev" state="directory"
+
+- name: get algo
+  git:
+    repo: 'https://github.com/trailofbits/algo'
+    dest: ~/dev/algovpn
+    update: no
+    accept_hostkey: true
+
+- name: install dependencies of algovpn
+  become: yes
+  when: ansible_os_family == "Debian"
+  apt: name="{{item}}" state=present
+  with_items:
+    - libssl-dev
+    - libffi-dev
+    - python-dev
+    - python-pip
+    - python-setuptools
+    - python-virtualenv
+
+- pip:
+    requirements: ~/dev/algovpn/requirements.txt
+    virtualenv: ~/dev/algovpn/env

@@ -1,0 +1,10 @@
+---
+
+- name: clone the emacs.d repo
+  git:
+    repo: 'https://github.com/sdll/smax'
+    dest: ~/.emacs.d
+    update: no
+    accept_hostkey: true
+
+

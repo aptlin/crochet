@@ -1,0 +1,24 @@
+* Crochet
+
+** Sensible Debian Configuration Management with Ansible
+
+- code inspired by [1] and [2]
+- modular configuration for a variety of use-cases
+- extensible with the powers of Ansible
+- provided with bootstrapping scripts:
+  + ~bootstrap_debian~ prepares the ground by installing ~sudo~ and ~ansible~
+  + ~link_paths~ symlinks variables and hosts
+  + ~setup_ssh_key~ deals with the ssh keys and their integration with ansible
+- easily deployed with:
+
+#+BEGIN_SRC sh
+ansible-playbook -i hosts -K laptop.yml 
+#+END_SRC
+
+** Further reading
+
+[1]. [[https://spin.atomicobject.com/2015/09/21/ansible-configuration-management-laptop/][Atomic Object’s Guide to CMS of a laptop with Ansible]]
+[2]. [[https://github.com/atomicobject/ansible-laptop-playbook-example/tree/1785f25014fa5a7776de5b332d093b60bf59c8e0][Atomic Object’s Code]]
+[3]. [[https://github.com/JBKahn/provisioning-local/tree/d57b23218cbd40ac5639f79727141d3adbeb21e5][@JBKhan’s approach]]
+
+

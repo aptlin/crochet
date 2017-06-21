@@ -1,0 +1,11 @@
+---
+
+- hosts: localhost
+  connection: local
+  roles:
+    - common
+    - { role: debian, when: ansible_os_family == "Debian" }
+    - laptop
+    - { role: get_emacs, when: install_emacs is defined}
+    - { role: algovpn, when: ansible_os_family == "Debian"}
+    - { role: x11, when: ansible_distribution != "MacOSX" }

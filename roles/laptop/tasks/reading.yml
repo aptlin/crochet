@@ -1,0 +1,9 @@
+- name: install reading software
+  become: yes
+  when: ansible_os_family == "Debian"
+  apt:
+    name: "{{item}}"
+    state: latest
+  with_items:
+    - libreoffice
+    - zathura    
