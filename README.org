@@ -18,7 +18,9 @@ ansible-playbook -i hosts -K laptop.yml
 ** Further reading
 
 [1]. [[https://spin.atomicobject.com/2015/09/21/ansible-configuration-management-laptop/][Atomic Object’s Guide to CMS of a laptop with Ansible]]
+
 [2]. [[https://github.com/atomicobject/ansible-laptop-playbook-example/tree/1785f25014fa5a7776de5b332d093b60bf59c8e0][Atomic Object’s Code]]
+
 [3]. [[https://github.com/JBKahn/provisioning-local/tree/d57b23218cbd40ac5639f79727141d3adbeb21e5][@JBKhan’s approach]]
 
 
