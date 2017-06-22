@@ -14,5 +14,6 @@
     - inkscape
     - udevil
     - feh
-    
+    - apt-transport-https
+    - xbacklight
     

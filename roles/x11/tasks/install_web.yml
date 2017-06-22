@@ -6,4 +6,5 @@
   apt: name="{{item}}" state=latest
   with_items:
     - firefox-esr
+    - chromium
     - surfraw

@@ -12,3 +12,14 @@
     - alsa-oss
     
 
+- name: set up modprobe.d directory
+  when: ansible_os_family == "Debian" and sdll == "true"
+  become: yes
+  file: dest="/etc/modprobe.d" state="directory"
+
+- name: create input config
+  become: yes
+  when: ansible_os_family == "Debian" and sdll == "true"
+  copy:
+    src: 10-alsa-base.conf
+    dest: /etc/modprobe.d/10-alsa-base.conf

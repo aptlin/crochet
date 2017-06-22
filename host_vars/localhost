@@ -3,3 +3,4 @@
 has_root: true
 install_emacs: true
 sdll: true
+gpu: intel
