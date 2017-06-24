@@ -9,6 +9,7 @@
     - ansible
     - git
     - stow
+    - curl
   # utils
     - build-essential
     - bzip2

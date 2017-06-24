@@ -12,8 +12,29 @@
     - gparted
     - haveged
     - inkscape
+    - gimp
     - udevil
     - feh
     - apt-transport-https
     - xbacklight
-    
+
+- name: clone the dots
+  when: sdll is defined
+  git:
+    repo: 'https://github.com/sdll/dots'
+    dest: ~/dots
+    update: no
+    accept_hostkey: true
+
+- name: ensure ~/bin exists
+  when: sdll is defined
+  shell: stow utils
+  args:
+    chdir: ~/dots
+
+- name: install custom scripts
+  when: sdll is defined
+  get_url:
+    url: https://raw.githubusercontent.com/raylee/tldr/master/tldr
+    dest: ~/bin/tldr
+    mode: 0755

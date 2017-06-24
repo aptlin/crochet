@@ -22,5 +22,6 @@
     - python-virtualenv
 
 - pip:
+    when: ansible_os_family == "Debian"
     requirements: ~/dev/algovpn/requirements.txt
     virtualenv: ~/dev/algovpn/env

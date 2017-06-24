@@ -1,0 +1,4 @@
+ansible
+markupsafe
+dopy==0.3.5
+

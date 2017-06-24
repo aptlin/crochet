@@ -1,0 +1,32 @@
+---
+- name: ensure ~/dev/ exists
+  file: path="~/dev" state="directory"
+
+- name: get streisand
+  git:
+    repo: 'https://github.com/jlund/streisand'
+    dest: ~/dev/streisand
+    update: no
+    accept_hostkey: true
+
+- name: install dependencies of streisand
+  become: yes
+  when: ansible_os_family == "Debian"
+  apt: name="{{item}}" state=present
+  with_items:
+    - python-paramiko
+    - python-pip
+    - python-pycurl
+    - python-dev
+    - build-essential
+    - openconnect
+    - shadowsocks
+
+- name: install streisand requirements  
+  copy:
+    src: requirements.txt
+    dest: ~/dev/streisand/requirements.txt
+
+- pip:
+    requirements: ~/dev/streisand/requirements.txt
+    virtualenv: ~/dev/streisand/env

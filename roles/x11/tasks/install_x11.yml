@@ -33,6 +33,7 @@
     - rofi
     - xmonad
     - xmobar
+    - stalonetray
     - compton
     - unclutter
     - slock

@@ -9,7 +9,6 @@
   with_items:
     - wpasupplicant
     - network-manager
+    - network-manager-openconnect-gnome
     - network-manager-gnome
-    - network-manager-strongswan
-    
 

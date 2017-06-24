@@ -7,3 +7,11 @@
     update: no
     accept_hostkey: true
 
+- name: install utilities for emacs
+  become: yes
+  when: ansible_os_family == "Debian"
+  apt:
+    name: "{{item}}"
+    state: latest
+  with_items:
+    - html2text
