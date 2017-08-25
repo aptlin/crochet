@@ -21,6 +21,9 @@
     - build-essential
     - openconnect
     - shadowsocks
+    - openvpn
+    - stunnel
+    - sshuttle
 
 - name: install streisand requirements  
   copy:

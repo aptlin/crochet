@@ -1,0 +1,16 @@
+- name: install npm
+  become: yes
+  when: ansible_os_family == "Debian"
+  apt:
+    name: "{{item}}"
+    state: latest
+  with_items:
+    - npm
+- name: install nodejs utilities
+  become: yes
+  when: ansible_os_family == "Debian"
+  npm:
+    name: "{{item}}"
+    global: yes
+  with_items:
+    - tldr

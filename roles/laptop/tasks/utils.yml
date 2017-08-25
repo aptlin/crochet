@@ -12,12 +12,35 @@
     - gparted
     - haveged
     - inkscape
+    - krita
     - gimp
     - udevil
     - feh
     - apt-transport-https
     - xbacklight
+    - syncthing
+    - nodejs
+    - simple-scan
+    - libcurl4-openssl-dev
+    - libssl-dev
+    - mosh
+    - filezilla
+    - unrar-free
+    - ffmpeg
+    - dnsutils
+    - dnscrypt-proxy
+    - unbound
 
+- name: set up wacom utils
+  become: yes
+  when: ansible_os_family == "Debian"
+  apt:
+    name: "{{item}}"
+    state: latest
+  with_items:
+    - mypaint
+    - mypaint-data
+    - mypaint-data-extras
 - name: clone the dots
   when: sdll is defined
   git:
@@ -26,15 +49,15 @@
     update: no
     accept_hostkey: true
 
-- name: ensure ~/bin exists
+- name: ensure ~/dots exists
   when: sdll is defined
   shell: stow utils
   args:
     chdir: ~/dots
 
-- name: install custom scripts
-  when: sdll is defined
-  get_url:
-    url: https://raw.githubusercontent.com/raylee/tldr/master/tldr
-    dest: ~/bin/tldr
-    mode: 0755
+# - name: install custom scripts
+#   when: sdll is defined
+#   get_url:
+#     url: https://raw.githubusercontent.com/raylee/tldr/master/tldr
+#     dest: ~/bin/tldr
+#     mode: 0755

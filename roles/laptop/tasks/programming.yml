@@ -6,6 +6,10 @@
     state: latest
   with_items:
     - bear
-    - clang
+    - clang-6.0
+    - libclang-6.0-dev
+    - cmake
+    - rtags
+    - lua5.3
     - global
     - haskell-stack 

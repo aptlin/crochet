@@ -21,6 +21,7 @@
     - w3m    
     - emacs25
     - vim
+    - resolvconf
   # search and navigation
     - silversearcher-ag
     - locate

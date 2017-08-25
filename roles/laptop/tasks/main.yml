@@ -8,3 +8,5 @@
 - include: projects.yml
 - include: reading.yml
 - include: utils.yml
+- include: npm.yml
+- include: pip.yml

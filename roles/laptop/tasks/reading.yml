@@ -6,4 +6,6 @@
     state: latest
   with_items:
     - libreoffice
-    - zathura    
+    - zathura
+    - zathura-ps
+    - zathura-djvu
